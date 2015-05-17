@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Travel app in 2 hours: Sabre, LumX, NodeJS and Angular | appapappa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="The back storyI decided to build a travel web app this morning. I had been looking at the Sabre Developer Studio yesterday, and I wanted to get my hands dirty. I had also been looking at LumX a few da">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Travel app in 2 hours: Sabre, LumX, NodeJS and Angular">
+<meta property="og:url" content="http://yoursite.com/2015/05/14/travel_app/index.html">
+<meta property="og:site_name" content="appapappa">
+<meta property="og:description" content="The back storyI decided to build a travel web app this morning. I had been looking at the Sabre Developer Studio yesterday, and I wanted to get my hands dirty. I had also been looking at LumX a few da">
+<meta property="og:image" content="https://www.anony.ws/i/2015/05/12/getlost.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Travel app in 2 hours: Sabre, LumX, NodeJS and Angular">
+<meta name="twitter:description" content="The back storyI decided to build a travel web app this morning. I had been looking at the Sabre Developer Studio yesterday, and I wanted to get my hands dirty. I had also been looking at LumX a few da">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/scrollLoading/style.css" type="text/css">
+  
+  
+
+
+  
+
+  
+    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
+    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="/" class="logo"></a>
+          </h1>
+          
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/">Home</a></li>
+              
+                    
+                  
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/about/index.html">About</a></li>
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+
+              <h1 class="header">uncategorized</h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-travel_app" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      Travel app in 2 hours: Sabre, LumX, NodeJS and Angular
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2015/05/14/travel_app/" class="article-date">
+  <time datetime="2015-05-14T10:51:04.000Z" itemprop="datePublished">2015-05-14</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <h2 id="The_back_story">The back story</h2><p>I decided to build a travel web app this morning. I had been looking at the <a href="https://developer.sabre.com/" target="_blank" rel="external">Sabre Developer Studio</a> yesterday, and I wanted to get my hands dirty. I had also been looking at <a href="http://ui.lumapps.com/" target="_blank" rel="external">LumX</a> a few days ago, an AngularJS web frontend framework that implemented the <a href="http://www.google.com/design/spec/material-design/introduction.html" target="_blank" rel="external">Google Material Design</a> guidelines, and wanted to give it a spin.</p>
+<p><strong>Follow along</strong> to see how I did it - all the way from coding to deployment on EC2, built using ExpressJS &amp; Angular.</p>
+<h2 id="What_are_we_building?">What are we building?</h2><p>I’ve always wanted to build an app that allows me to pick where I am, set my dates and a budget - and it tells me where all I could go. Basically, a “I don’t care where I go this weekend - just get me out of here” app :) This is what I wanted to build in 2 hours: too ambitious? Perhaps not!</p>
+<h2 id="What_you’ll_need_to_do_this">What you’ll need to do this</h2><p>There are a few things you’ll need to get this done in 2 hours - no cheating here, just basic stuff that I had on my machine already.</p>
+<ul>
+<li><strong>An editor</strong>: SublimeText, Brackets or my choice - <a href="https://atom.io/" target="_blank" rel="external">Atom</a>.</li>
+<li><strong>An AWS account</strong>: I wont be covering setting up Amazon AWS. You could do this on Digital Ocean, Linode etc. too, so that will work as well.</li>
+<li><strong>nodejs</strong>: This is fairly simple to install, so you can do that from <a href="https://nodejs.org/" target="_blank" rel="external">here</a></li>
+<li><strong>git &amp; a GitHub account</strong>: This is to commit your code, and store it up on the web. Learn more at <a href="www.github.com">GitHub</a> if you don’t have this set up.</li>
+</ul>
+<h2 id="Getting_started:_8:00_am">Getting started: 8:00 am</h2><p>The first thing I did was sign-up for a <a href="https://developer.sabre.com/" target="_blank" rel="external">Sabre Developer Studio</a> account.</p>
+<blockquote>
+<p>Sabre is what is called a GDS (Global Distribution System). GDS’s aggregate flight, hotel, cruise, taxi and other inventory and provide an interface to travel agents (Expedia, Travelocity) to complete the bookings. Amadeus is the other large GDS, but they aren’t as developer friendly as Sabre from what I could see.</p>
+</blockquote>
+<p>Signing up for this was trivial - fill out a <a href="https://developer.sabre.com/member/register" target="_blank" rel="external">registration form</a>, validated your email address and then get your API key and password.</p>
+<p>This took about 5 minutes to complete. After this, I spent some time looking at the REST API’s that Sabre exposes. I loved the documentation that Sabre has, and was pleasantly surprised by it, since I had the impression that integrating with something like a GDS would be a painful thing to do.</p>
+<p>Specifically I spent some time looking at these two references:</p>
+<ul>
+<li><a href="https://developer.sabre.com/docs/read/rest_basics/endpoints_and_uris" target="_blank" rel="external">Endpoints &amp; URI’s</a> under the REST basics section</li>
+<li><a href="https://developer.sabre.com/docs/read/REST_APIs" target="_blank" rel="external">REST API’s</a> which documents all the APIs that are exposed.</li>
+</ul>
+<p>FYI, Sabre also exposes much more functionality - like completing the booking, changing seats, cancellations etc. through a SOAP API, but I wasn’t feeling dirty enough to do SOAP!</p>
+<p>While looking through these APIs, I identified two APIs that looked useful to me:</p>
+<ol>
+<li><strong>GET /v1/lists/supported/cities</strong>: This returns a list of cities which have airports in them.</li>
+<li><strong>GET /v1/shop/flights/fares</strong>: This returns a list of flight fares given an origin, start &amp; end dates and a budget - just what I need!</li>
+</ol>
+<p>By now, it was about 8:20 am: 100 minutes left!</p>
+<h2 id="Writing_some_code:_8:20_am">Writing some code: 8:20 am</h2><p>I decided to get my hands dirty with somde code. I found the Sabre had <a href="https://github.com/SabreDevStudio/sabre-dev-studio-node" target="_blank" rel="external">published</a> an npm module on GitHub that wraps their API’s - handy!</p>
+<p>So, to get started I did this:</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>cd ~<span class="regexp">/Lab/</span></span><br><span class="line"><span class="variable">$ </span>mkdir sabrelab</span><br><span class="line"><span class="variable">$ </span>cd sabrelab</span><br><span class="line"><span class="variable">$ </span>npm install sabre-dev-studio --save-dev</span><br></pre></td></tr></table></figure>
+<p>Then I cranked up my code editor and wrote some sample code to test the API’s out, mostly the same stuff that was there on Sabre’s GitHub account:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> SabreDevStudio = <span class="built_in">require</span>(<span class="string">'sabre-dev-studio'</span>);</span><br><span class="line"><span class="keyword">var</span> sabre_dev_studio = <span class="keyword">new</span> SabreDevStudio(&#123;</span><br><span class="line">  client_id:     <span class="string">'&lt;your client id here&gt;'</span>,</span><br><span class="line">  client_secret: <span class="string">'&lt;your client secret here&gt;'</span>,</span><br><span class="line">  uri:           <span class="string">'https://api.test.sabre.com'</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">var</span> options = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> callback = <span class="function"><span class="keyword">function</span><span class="params">(error, data)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (error) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(<span class="built_in">JSON</span>.parse(data)));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">sabre_dev_studio.get(<span class="string">'/v1/lists/supported/cities'</span>, options, callback);</span><br><span class="line">sabre_dev_studio.get(<span class="string">'/v1/shop/flights/fares?origin=NYC&amp;departuredate=2015-05-25&amp;returndate=2015-05-30&amp;maxfare=200'</span>, options, callback);</span><br></pre></td></tr></table></figure>
+<p>Running this was useful, as it gave me the idea of the output I’d get. For the <strong>/cities API call</strong>, the output was like this:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"Cities"</span>:[</span><br><span class="line">&#123;<span class="string">"code"</span>:<span class="string">"AUH"</span>,<span class="string">"name"</span>:<span class="string">"Abu Dhabi"</span>,<span class="string">"countryCode"</span>:<span class="string">"AE"</span>,<span class="string">"countryName"</span>:<span class="string">"United Arab Emirates"</span>,<span class="string">"regionName"</span>:<span class="string">"Middle East"</span>,<span class="string">"Links"</span>:[&#123;<span class="string">"rel"</span>:<span class="string">"airportsInCity"</span>,<span class="string">"href"</span>:<span class="string">"https://api.test.sabre.com/v1/lists/supported/cities/AUH/airports"</span>&#125;]&#125;,</span><br><span class="line">&#123;<span class="string">"code"</span>:<span class="string">"ALY"</span>,<span class="string">"name"</span>:<span class="string">"Alexandria"</span>,<span class="string">"countryCode"</span>:<span class="string">"EG"</span>,<span class="string">"countryName"</span>:<span class="string">"Egypt"</span>,<span class="string">"regionName"</span>:<span class="string">"Middle East"</span>,<span class="string">"Links"</span>:[&#123;<span class="string">"rel"</span>:<span class="string">"airportsInCity"</span>,<span class="string">"href"</span>:<span class="string">"https://api.test.sabre.com/v1/lists/supported/cities/ALY/airports"</span>&#125;]&#125;]&#125;</span><br></pre></td></tr></table></figure></p>
+<p>For the <strong>/fares API call</strong>, the output was like this:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"OriginLocation"</span>:<span class="string">"NYC"</span>,<span class="string">"FareInfo"</span>:[&#123;<span class="string">"CurrencyCode"</span>:<span class="string">"USD"</span>,<span class="string">"LowestNonStopFare"</span>:<span class="number">136.2</span>,<span class="string">"LowestFare"</span>:<span class="number">136.2</span>,<span class="string">"DestinationLocation"</span>:<span class="string">"BUF"</span>,<span class="string">"DepartureDateTime"</span>:<span class="string">"2015-05-25T00:00:00"</span>,<span class="string">"ReturnDateTime"</span>:<span class="string">"2015-05-30T00:00:00"</span>,<span class="string">"Links"</span>:[&#123;<span class="string">"rel"</span>:<span class="string">"shop"</span>,<span class="string">"href"</span>:<span class="string">"https://api.test.sabre.com/v1/shop/flights?origin=NYC&amp;destination=BUF&amp;departuredate=2015-05-25&amp;returndate=2015-05-30&amp;pointofsalecountry=US"</span>&#125;]&#125;]&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Brilliant - so, I could now get a list of the airport codes &amp; city names to show as starting cities &amp; I could also get the list of fares &amp; destinations back… the rest of this was going to be a piece of cake!</p>
+<p>Time now: 8:40 am, 80 minutes to go…</p>
+<h2 id="Coding_up_the_nodejs_/_Express_server:_8:40_am">Coding up the nodejs / Express server: 8:40 am</h2><p>I spent some time wondering if I should use <a href="http://browserify.org/" target="_blank" rel="external">Browserify</a> on the Sabre npm module, and use it that way. But then I didn’t know enough about Browserify, so I said, what the heck, lets just hack up a server real quick.</p>
+<p>First, I created the directory structure, fairly simple, and touched a couple of files, package.json and app.js:<br><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby"> sabrelab</span><br><span class="line"></span>-<span class="ruby">-- config</span><br><span class="line"></span>-<span class="ruby">-- www</span><br><span class="line"></span>-<span class="ruby">-- package.json</span><br><span class="line"></span>-<span class="ruby">-- app.js</span></span><br></pre></td></tr></table></figure></p>
+<p>Inside package.json, I put in some standard stuff that I use in every project, and also included sabre-dev-studio. My package.json looked like this:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#10;  &#34;dependencies&#34;: &#123;&#10;    &#34;body-parser&#34;: &#34;latest&#34;,&#10;    &#34;compression&#34;: &#34;latest&#34;,&#10;    &#34;cookie-parser&#34;: &#34;latest&#34;,&#10;    &#34;dateformat&#34;: &#34;~1.0.7-1.2.3&#34;,&#10;    &#34;errorhandler&#34;: &#34;latest&#34;,&#10;    &#34;express&#34;: &#34;latest&#34;,&#10;    &#34;express-session&#34;: &#34;latest&#34;,&#10;    &#34;http-post&#34;: &#34;~0.1.1&#34;,&#10;    &#34;memory-cache&#34;: &#34;0.0.5&#34;,&#10;    &#34;method-override&#34;: &#34;latest&#34;,&#10;    &#34;morgan&#34;: &#34;latest&#34;,&#10;    &#34;mstring&#34;: &#34;^0.1.2&#34;,&#10;    &#34;multer&#34;: &#34;^0.1.0&#34;,&#10;    &#34;serve-favicon&#34;: &#34;latest&#34;,&#10;    &#34;string&#34;: &#34;~1.8.0&#34;,&#10;    &#34;underscore&#34;: &#34;latest&#34;,&#10;    &#34;validator&#34;: &#34;^3.19.1&#34;,&#10;    &#34;sabre-dev-studio&#34;: &#34;^1.0.1&#34;&#10;  &#125;,&#10;  &#34;name&#34;: &#34;sabrelab&#34;,&#10;  &#34;subdomain&#34;: &#34;sabrelab&#34;,&#10;  &#34;scripts&#34;: &#123;&#10;    &#34;start&#34;: &#34;node app.js&#34;&#10;  &#125;,&#10;  &#34;version&#34;: &#34;0.0.1&#34;,&#10;  &#34;engines&#34;: &#123;&#10;    &#34;node&#34;: &#34;0.8.x&#34;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>I wasn’t sure I needed everything there, but then, <em>I was working against time</em>…</p>
+<p>Next, I whipped out app.js, mostly using what I’d used on a previous project:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(function () &#123;&#10;  &#39;use strict&#39;;&#10;  var express = require(&#39;express&#39;);&#10;  var app = express();&#10;&#10;  require(&#39;./config/config_app&#39;)(app);&#10;  require(&#39;./config/config_routes&#39;)(app);&#10;&#10;  // START THE SERVER&#10;  console.log(&#39;STARTING THE SABRE SERVER&#39;);&#10;  console.log(&#39;-------------------------&#39;);&#10;  app.listen(3000);&#10;  console.log(&#39;Started the server&#39;);&#10;  process.on(&#39;uncaughtException&#39;, function (error) &#123;&#10;      console.log(error.stack);&#10;      console.log(error);&#10;  &#125;);&#10;&#10;&#125;)();</span><br></pre></td></tr></table></figure>
+<p>Now, to the config_app.js in the config directory, again, mostly boilerplate stuff from a different project:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;use strict&#39;;&#10;var express = require(&#39;express&#39;),&#10;    bodyParser = require(&#39;body-parser&#39;),&#10;    methodOverride = require(&#39;method-override&#39;),&#10;    morgan = require(&#39;morgan&#39;),&#10;    cookieParser = require(&#39;cookie-parser&#39;),&#10;    compression = require(&#39;compression&#39;),&#10;    errorhandler = require(&#39;errorhandler&#39;),&#10;    multer  = require(&#39;multer&#39;);&#10;&#10;module.exports = function(app) &#123;&#10;  app.use(compression());&#10;  app.use(morgan(&#39;dev&#39;));&#10;  app.use(bodyParser());&#10;  app.use(multer());&#10;  app.use(cookieParser(&#39;sabreSessions&#39;));&#10;&#10;  app.use(methodOverride());&#10;&#10;  app.use(express.static(__dirname + &#39;/../www/&#39;));&#10;  app.all(&#34;/api/*&#34;, function(req, res, next) &#123;&#10;      res.header(&#34;Access-Control-Allow-Origin&#34;, &#34;*&#34;);&#10;      res.header(&#34;Access-Control-Allow-Headers&#34;, &#34;Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With, Accept&#34;);&#10;      res.header(&#34;Access-Control-Allow-Methods&#34;, &#34;GET, PUT, POST, HEAD, DELETE, OPTIONS&#34;);&#10;      return next();&#10;  &#125;);&#10;&#10;  app.use(errorhandler(&#123;&#10;      dumpExceptions: true,&#10;      showStack: true&#10;  &#125;));&#10;&#10;&#125;;</span><br></pre></td></tr></table></figure>
+<p>Now that I had the skeleton of a working server, I had to put in the routes, which is what I did next in config_routes.js. This was all new work, so it required some time and thinking:</p>
+<p>This code came first - to initialise the Sabre Dev Studio &amp; authorize against it using the API key:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;use strict&#39;;&#10;var SabreDevStudio = require(&#39;sabre-dev-studio&#39;);&#10;var sabreDevStudio = new SabreDevStudio(&#123;&#10;  client_id:     &#39;&#60;your client_id&#62;&#39;,&#10;  client_secret: &#39;&#60;your client_secret&#62;&#39;,&#10;  uri:           &#39;https://api.test.sabre.com&#39;&#10;&#125;);&#10;var options = &#123;&#125;;</span><br></pre></td></tr></table></figure>
+<p>This code came next, two small helper functions: the first one (sabreCall) to make a GET call against Sabre, and the next one (response) to send back the response to the HTTP client with either the data returned, or the error:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function sabreCall(q, res) &#123;&#10;  sabreDevStudio.get(q, options, function(err, data) &#123;&#10;    response(res, err, data);&#10;  &#125;);&#10;&#125;&#10;&#10;function response(res, err, data) &#123;&#10;  if (err) &#123;&#10;    res.status(200).send(&#123;&#10;      &#39;status&#39;: false,&#10;      &#39;message&#39;: &#39;Error&#39;,&#10;      &#39;info&#39;: err&#10;    &#125;);&#10;  &#125; else &#123;&#10;    res.status(200).send(&#123;&#10;      &#39;status&#39;: true,&#10;      &#39;message&#39;: &#39;Success&#39;,&#10;      &#39;info&#39;: data&#10;    &#125;);&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>All this work meant that setting up the API’s was going to be trivial - just calling our sabreCall function with the API’s we need:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = function(app) &#123;&#10;&#10;  app.get(&#39;/api/v1/cities&#39;, function(req,res) &#123;&#10;    sabreCall(&#39;/v1/lists/supported/cities&#39;, res);&#10;  &#125;);&#10;&#10;  app.get(&#39;/api/v1/places&#39;, function(req,res) &#123;&#10;    sabreCall(&#39;/v1/shop/flights/fares?origin=&#39; + req.query.origin +&#10;    &#39;&#38;departuredate=&#39; + req.query.departuredate +&#10;    &#39;&#38;returndate=&#39; + req.query.returndate +&#10;    &#39;&#38;maxfare=&#39; + req.query.maxfare, res);&#10;  &#125;);&#10;&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>That was it</strong> - I started up the server (below), and tried hitting the API’s from Chrome by navigating to <a href="http://localhost:3000/api/v1/cities" target="_blank" rel="external">http://localhost:3000/api/v1/cities</a>, and got back the expected response!<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>node app.js</span><br></pre></td></tr></table></figure></p>
+<p>Now all that was left was to write the front-end! I looked at my watch, and saw that I’d spent half an hour on the server, so I had 50 minutes left.</p>
+<h2 id="Creating_the_front-end_with_LumX_and_AngularJS:_9:10_am">Creating the front-end with LumX and AngularJS: 9:10 am</h2><p>I had seen <a href="http://ui.lumapps.com/" target="_blank" rel="external">LumX</a> a few days ago, and was intrigued by it. I wanted to try out the Google Material Design and see how it felt. At the same time, I wasn’t sure I could make it in the time I had left.</p>
+<p>Should I use <a href="http://getbootstrap.com/" target="_blank" rel="external">Bootstrap</a> instead? I had used it before, which was a good thing. But then, what the heck, you live only once :) LumX it was going to be.</p>
+<p>The first nice thing about LumX was that it was really easy to install, and it also installed everything else I needed. I navigated into the www directory, and got started:</p>
+<figure class="highlight smalltalk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="char">$ </span>cd ~/<span class="class">Lab</span>/sabrelab/www</span><br><span class="line"><span class="char">$ </span>bower install lumx</span><br></pre></td></tr></table></figure>
+<p>This installed LumX. Also, on the <strong>LumX site</strong>(<a href="http://ui.lumapps.com/getting-started/installation" target="_blank" rel="external">http://ui.lumapps.com/getting-started/installation</a>), they have a great getting started that asked me to add this to my index.html. So, I started up a www/index.html file, and put this into it:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html&#62;&#10;&#60;html lang=&#34;en&#34;&#62;&#10;&#10;&#60;head&#62;&#10;  &#60;meta charset=&#34;UTF-8&#34;&#62;&#10;  &#60;title&#62;Get Lost&#60;/title&#62;&#10;  &#60;link rel=&#34;stylesheet&#34; href=&#34;bower_components/lumx/dist/lumx.css&#34;&#62;&#10;  &#60;link rel=&#34;stylesheet&#34; href=&#34;bower_components/mdi/materialdesignicons.css&#34;&#62;&#10;  &#60;link rel=&#34;stylesheet&#34; href=&#34;http://fonts.googleapis.com/css?family=Roboto:300,400,500,700&#34;&#62;&#10;&#60;/head&#62;&#10;&#10;&#60;body ng-app=&#34;getLostApp&#34;&#62;&#10;&#10;  &#60;script src=&#34;bower_components/jquery/dist/jquery.js&#34;&#62;&#60;/script&#62;&#10;  &#60;script src=&#34;bower_components/velocity/velocity.js&#34;&#62;&#60;/script&#62;&#10;  &#60;script src=&#34;bower_components/moment/min/moment-with-locales.js&#34;&#62;&#60;/script&#62;&#10;  &#60;script src=&#34;bower_components/angular/angular.js&#34;&#62;&#60;/script&#62;&#10;  &#60;script src=&#34;bower_components/lumx/dist/lumx.js&#34;&#62;&#60;/script&#62;&#10;  &#60;script src=&#34;./app.js&#34;&#62;&#60;/script&#62;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure>
+<p>I then created an app.js file (referenced on the last line of the HTML file):<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.module(&#39;getLostApp&#39;, [&#39;lumx&#39;]).&#10;controller(&#39;MainCtrl&#39;, function($rootScope, $scope, $http) &#123;&#10;&#10;  // Get the cities data that I can show in the drop-down&#10;  $http.get(&#39;/api/v1/cities&#39;).success(function(data) &#123;&#10;    $scope.cities = (JSON.parse(data.info)).Cities;&#10;    console.log($scope.cities);&#10;  &#125;).error(function(err) &#123;&#10;    $scope.error = err;&#10;  &#125;);&#10;&#10;  // Set some prices that I can show in the prices drop-down&#10;  $scope.prices = [&#10;    &#123;show:&#39;$200&#39;, value:200&#125;,&#10;    &#123;show:&#39;$300&#39;, value:300&#125;,&#10;    &#123;show:&#39;$400&#39;, value:400&#125;,&#10;    &#123;show: &#39;$500&#39;, value:500&#125;&#10;  ];&#10;&#10;  // Initialize this with what to show when the page is loaded&#10;  $scope.info = &#123;&#10;    origin: &#123;&#10;      name: &#39;New York City&#39;,&#10;      code: &#39;NYC&#39;&#10;    &#125;,&#10;    maxfare: &#123;&#10;      show: &#39;$500&#39;,&#10;      value: 500&#10;    &#125;,&#10;    returndate: &#39;2015-05-20&#39;,&#10;    departuredate: &#39;2015-05-15&#39;&#10;  &#125;;&#10;&#10;  // Call the server to get the fares info&#10;  $scope.submit = function() &#123;&#10;    $http.get(&#39;/api/v1/places?origin=&#39; + $scope.info.origin.code +&#10;      &#39;&#38;departuredate=&#39; + formatDate($scope.info.departuredate) +&#10;      &#39;&#38;returndate=&#39; + formatDate($scope.info.returndate) +&#10;      &#39;&#38;maxfare=&#39; + $scope.info.maxfare.value).success(function(data) &#123;&#10;        $scope.results = data;&#10;        $scope.data = data.info;&#10;        if ($scope.results.status) &#123;&#10;          $scope.fareinfo = JSON.parse($scope.data).FareInfo;&#10;        &#125; else &#123;&#10;          $scope.error = JSON.parse($scope.data.data).message;&#10;        &#125;&#10;    &#125;).error(function(err) &#123;&#10;      $scope.error = JSON.parse(err.data).message;&#10;    &#125;);&#10;  &#125;;&#10;&#10;  // Helper function from stackoverflow so that I can format the date before sending to the server&#10;  function formatDate(date) &#123;&#10;    var d = new Date(date),&#10;      month = &#39;&#39; + (d.getMonth() + 1),&#10;      day = &#39;&#39; + d.getDate(),&#10;      year = d.getFullYear();&#10;&#10;    if (month.length &#60; 2) &#123;&#10;      month = &#39;0&#39; + month;&#10;    &#125;&#10;    if (day.length &#60; 2) &#123;&#10;      day = &#39;0&#39; + day;&#10;    &#125;&#10;&#10;    return [year, month, day].join(&#39;-&#39;);&#10;  &#125;&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>Now, I all I had to do was the UI using LumX, and then hook it up with some simple AngularJS to call my functions. But this is where I got stuck: I’m not great at building the front-end UI, and the LumX documentation wasn’t great, especially on how to use the FlexBox (maybe I dont know enough about FlexBox?).</p>
+<p>Anyway, not much time to think - it’s time to code up this UI! What did I want, let me think about this:</p>
+<ol>
+<li>A heading</li>
+<li>A row with two colums: on to select the start city, and the other to put in my budget.</li>
+<li>A row with a start and end date</li>
+<li>A submit button</li>
+<li>A place to show the results - error or success</li>
+</ol>
+<p>Taking it one at a time, this is how the UI built up: first the heading:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div class=&#34;p+&#34;&#62;&#10;  &#60;span class=&#34;fs-display-3 display-block&#34;&#62;Get Lost&#60;/span&#62;&#10;  &#60;span class=&#34;fs-title display-block&#34;&#62;goofing around with @appa&#60;/span&#62;&#10;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
+<p>Then, the reference to the MainCtrl and the row…<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div ng-controller=&#34;MainCtrl&#34;&#62;&#10;  &#60;div class=&#34;mt++&#34; flex-container=&#34;row&#34; flex-gutter=&#34;24&#34;&#62;</span><br></pre></td></tr></table></figure></p>
+<p>Next, the first column - this one would ask the user to pick a city…</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div flex-item&#62;&#10;  &#60;lx-select ng-model=&#34;info.origin&#34; placeholder=&#34;Starting airport&#34; choices=&#34;cities&#34; floating-label&#62;&#10;    &#60;lx-select-selected&#62;&#10;      &#123;&#123; $selected.name &#125;&#125; - &#123;&#123; $selected.code &#125;&#125;&#10;    &#60;/lx-select-selected&#62;&#10;&#10;    &#60;lx-select-choices&#62;&#10;      &#123;&#123; $choice.name &#125;&#125; - &#123;&#123; $choice.code &#125;&#125;&#10;    &#60;/lx-select-choices&#62;&#10;  &#60;/lx-select&#62;&#10;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
+<p>And, the next column, and end the row:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div flex-item&#62;&#10;  &#60;lx-select ng-model=&#34;info.maxfare&#34; placeholder=&#34;Budget&#34; choices=&#34;prices&#34; floating-label&#62;&#10;    &#60;lx-select-selected&#62;&#10;      &#123;&#123; $selected.show &#125;&#125;&#10;    &#60;/lx-select-selected&#62;&#10;&#10;    &#60;lx-select-choices&#62;&#10;      &#123;&#123; $choice.show &#125;&#125;&#10;    &#60;/lx-select-choices&#62;&#10;  &#60;/lx-select&#62;&#10;&#60;/div&#62;&#10;&#60;/div&#62;</span><br></pre></td></tr></table></figure></p>
+<p>Now, for the next row with the two columns with date pickers:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div class=&#34;mt++&#34; flex-container=&#34;row&#34; flex-gutter=&#34;24&#34;&#62;&#10;  &#60;div flex-item&#62;&#10;    &#60;form&#62;&#10;      &#60;lx-date-picker model=&#34;info.departuredate&#34; label=&#34;Start date&#34; locale=&#34;en&#34; fixed-label=&#34;true&#34; icon=&#34;calendar&#34;&#62;&#60;/lx-date-picker&#62;&#10;    &#60;/form&#62;&#10;  &#60;/div&#62;&#10;&#10;  &#60;div flex-item&#62;&#10;    &#60;form&#62;&#10;      &#60;lx-date-picker model=&#34;info.returndate&#34; label=&#34;End date&#34; locale=&#34;en&#34; fixed-label=&#34;true&#34; icon=&#34;calendar&#34;&#62;&#60;/lx-date-picker&#62;&#10;    &#60;/form&#62;&#10;  &#60;/div&#62;&#10;&#60;/div&#62;</span><br></pre></td></tr></table></figure></p>
+<p>Then, a row with the submit button:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div class=&#34;mt++&#34; flex-container=&#34;row&#34; flex-gutter=&#34;24&#34;&#62;&#10;  &#60;div flex-item&#62;&#10;    &#60;div flex-container=&#34;column&#34; flex-align=&#34;space-between center&#34;&#62;&#10;      &#60;button class=&#34;btn btn--m btn--blue btn--raised&#34; lx-ripple ng-click=&#34;submit()&#34;&#62;Submit&#60;/button&#62;&#10;    &#60;/div&#62;&#10;  &#60;/div&#62;&#10;&#60;/div&#62;</span><br></pre></td></tr></table></figure></p>
+<p>Now, for the row that handles the response…<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div class=&#34;mt++&#34; flex-container=&#34;row&#34; flex-gutter=&#34;24&#34; flex-wrap ng-show=&#34;results&#34;&#62;&#10;  &#60;div ng-show=&#34;results.status&#34; class=&#34;p++&#34;&#62;&#10;    &#60;div flex-item=&#34;6&#34;&#62;&#10;      &#60;span class=&#34;fs-title display-block mb&#34;&#62;Places you can go...&#60;/span&#62;&#10;        &#60;div class=&#34;divider divider--dark&#34;&#62;&#60;/div&#62;&#10;          &#60;ul class=&#34;list mt++&#34;&#62;&#10;            &#60;div ng-repeat=&#34;d in fareinfo | orderBy: &#39;LowestFare&#39;&#34;&#62;&#10;              &#60;li class=&#34;list-row list-row--has-separator&#34;&#62;&#10;                &#60;div class=&#34;list-row__content&#34;&#62;&#10;                  &#60;span&#62;&#123;&#123;d.LowestFare&#125;&#125;, &#123;&#123;d.DestinationLocation&#125;&#125;&#60;/span&#62;&#10;                &#60;/div&#62;&#10;              &#60;/li&#62;&#10;            &#60;/div&#62;&#10;          &#60;/ul&#62;&#10;        &#60;/div&#62;&#10;      &#60;/div&#62;&#10;&#10;      &#60;div ng-hide=&#34;results.status&#34; class=&#34;p++&#34;&#62;&#10;        &#60;h2&#62;Error&#60;/h2&#62;&#10;          &#123;&#123;error&#125;&#125;&#10;       &#60;/div&#62;&#10;    &#60;/div&#62;</span><br></pre></td></tr></table></figure></p>
+<p>By now, I was running out of time - I had a working app. Everything was working, but I wasn’t pleased yet, because:</p>
+<ul>
+<li>The UI didn’t look great. LumX had worked out well for the date picker &amp; the drop-down list, but I couldn’t get the hang of how to space things around.</li>
+<li>The results, when returned, didn’t have the full information - it had only the airport code &amp; the price, not the full airport name etc. It also didn’t look very good :(</li>
+</ul>
+<p>Here’s how it was looking by now:</p>
+<p><img src="https://www.anony.ws/i/2015/05/12/getlost.png" alt="ABC"></p>
+<p>Anyway, on to the next step - deploying to AWS. 20 minutes to go!!</p>
+<h2 id="GitHub,_and_deploying_to_AWS:_9:40_am">GitHub, and deploying to AWS: 9:40 am</h2><p>The next 20 minutes went by in a rush… first of all, I committed to git, and uploaded to GitHub:</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>cd ~<span class="regexp">/Lab/sabrelab</span></span><br><span class="line"><span class="variable">$ </span>git init .</span><br><span class="line"><span class="variable">$ </span>git add .</span><br><span class="line"><span class="variable">$ </span>git commit -am <span class="string">"Initial commit for Sabre Lab"</span></span><br></pre></td></tr></table></figure>
+<p>Then I went to GitHub and created a new repo at <a href="https://github.com/arunr/sabrelab" target="_blank" rel="external">https://github.com/arunr/sabrelab</a>. I went back to the command line and pushed my code up to GitHub, so I could later easily get to it from AWS:</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git remote <span class="built_in">add</span> origin http<span class="variable">s:</span>//github.<span class="keyword">com</span>/arunr/sabrelab.git</span><br><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure>
+<p>I then went over to AWS, and created a micro-instance of Ubuntu. After downloading the PEM file, I logged in to the instance, and installed node, git and forever (so that I could keep my server running):</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -i sabrelab.pem ubuntu@&lt;your server IP here&gt;</span><br><span class="line"></span><br><span class="line">Then <span class="command"><span class="keyword">on</span> <span class="title">the</span> <span class="title">Ubuntu</span> <span class="title">AWS</span> <span class="title">instance</span>:</span></span><br><span class="line"></span><br><span class="line">$ curl -<span class="variable">sL</span> <span class="keyword">https</span>://deb.nodesource.com/setup | sudo bash -</span><br><span class="line">$ sudo apt-<span class="built_in">get</span> install -y nodejs</span><br><span class="line">$ sudo apt-<span class="built_in">get</span> install git</span><br><span class="line">$ git clone <span class="keyword">https</span>://github.com/arunr/sabrelab.git</span><br><span class="line">$ sudo npm install -g <span class="keyword">forever</span></span><br><span class="line">$ cd ~/sabrelab</span><br><span class="line">$ sudo <span class="keyword">forever</span> <span class="built_in">start</span> app.js</span><br></pre></td></tr></table></figure>
+<p>After this, I had to do two things, which I had forgotten:</p>
+<ol>
+<li>Change the port in app.js from 3000 to 80.</li>
+<li>Add my EC2 instance to a security group that allowed for inbound access to the server on HTTP port 80.</li>
+</ol>
+<p>Once I had done this, I had my public facing server: at <a href="http://52.10.111.167" target="_blank" rel="external">http://52.10.111.167</a>.</p>
+<p>I looked at my watch, and it was 9:57 am… I had made it with just enough time to give me server an spin!</p>
+<h2 id="Closing_thoughts">Closing thoughts</h2><p>A few thoughts to close out - just my own learnings from the morning:</p>
+<ul>
+<li>I proved to myself that it is possible to create a web app from end-to-end in 2 hours (this was important for me, because I haven’t had any <em>code flow</em> for a while now!)</li>
+<li>More importantly, I managed to dabble with a few new things and see how they fit - Sabre Developer API’s and LumX.</li>
+<li>On the Sabre Developer APIs - I found this easy to start, well documented, useful and something I might use in a project in the future. The only catch was that this is all against the Sabre Test API’s and I couldn’t find any documentation on the pricing of the PROD API’s.</li>
+<li>On LumX - I found the UI beautiful in the examples, but couldn’t find enough documentation to make my own front-end UI look good in the half-hour I spent with it. So, I’m not dissing it, but it definitely felt hard - maybe I just need to put in more time into it.</li>
+<li>Next steps:<ul>
+<li>Clean up the UI and make it look pretty</li>
+<li>Show more full results, with a link to booking as well</li>
+<li>Connect to the Sabre PROD API’s</li>
+<li>Use geo-location to auto-fill the start city</li>
+<li>Wrap the entire thing in Ionic so there is a phone app version of this</li>
+</ul>
+</li>
+</ul>
+<p>That’s it - hope you had fun, and look forward to your comments!<br><a href="http://twitter.com/appa" target="_blank" rel="external">@appa</a></p>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://yoursite.com/2015/05/14/travel_app/" data-id="ci9sgp93d0001soovi29vtzfi" class="article-share-link">Share</a>
+        
+        
+      </footer>
+    </div>
+  </article>
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>follow:</p>
+    <ul class="social-links">
+      
+        <li><a class="social-tooltip" title="twitter" href="/" target="_blank"><i id="icon-twitter" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="facebook" href="/" target="_blank"><i id="icon-facebook" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="google_plus" href="/" target="_blank"><i id="icon-google_plus" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank"><i id="icon-github" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="weibo" href="/" target="_blank"><i id="icon-weibo" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="rss" href="/" target="_blank"><i id="icon-rss" class="icon"></i></a></li>
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/05/16/material_design/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <p class="article-nav-title">
+        
+          Material Design with AngularJS
+        
+      </p>
+      <i class="icon" id="icon-chevron-right"></i>
+    </a>
+  
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">recents</h3>
+    <div class="widget">
+      <ul id="recent-post" class="no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/05/16/material_design/" class="title">Material Design with AngularJS</a></p>
+              <p class="item-date"><time datetime="2015-05-16T10:10:55.000Z" itemprop="datePublished">2015-05-16</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/05/14/travel_app/" class="title">Travel app in 2 hours: Sabre, LumX, NodeJS and Angular</a></p>
+              <p class="item-date"><time datetime="2015-05-14T10:51:04.000Z" itemprop="datePublished">2015-05-14</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+
+    
+      
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://hexo.io">Hexo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon" id="icon-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/" class="logo"></a>
+        </h1>
+        <p>&copy; 2015 Arun Rajappa</p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+
+  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+  <script src="/scrollLoading/jquery.scrollLoading.js" type="text/javascript"></script>
+  <script src="/scrollLoading/main.js" type="text/javascript"></script>
+
+
+<script src="/js/html-patch.js" type="text/javascript"></script>
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
