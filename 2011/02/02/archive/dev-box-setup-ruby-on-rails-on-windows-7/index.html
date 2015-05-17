@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Ruby on Rails on Windows 7 | a cuppa appa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="I recently set up my dev box at home with Ruby on Rails. I am running Windows 7 64-bit on my machine, and after working through a number of issues, I now have a nice dev box setup on Windows 7. Here y">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ruby on Rails on Windows 7">
+<meta property="og:url" content="http://yoursite.com/2011/02/02/archive/dev-box-setup-ruby-on-rails-on-windows-7/index.html">
+<meta property="og:site_name" content="a cuppa appa">
+<meta property="og:description" content="I recently set up my dev box at home with Ruby on Rails. I am running Windows 7 64-bit on my machine, and after working through a number of issues, I now have a nice dev box setup on Windows 7. Here y">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ruby on Rails on Windows 7">
+<meta name="twitter:description" content="I recently set up my dev box at home with Ruby on Rails. I am running Windows 7 64-bit on my machine, and after working through a number of issues, I now have a nice dev box setup on Windows 7. Here y">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/scrollLoading/style.css" type="text/css">
+  
+  
+
+
+  
+
+  
+    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
+    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="/" class="logo"></a>
+          </h1>
+          
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/">Home</a></li>
+              
+                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Fatherhood/">Fatherhood</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Journal/">Journal</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Poetry/">Poetry</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Product-Management/">Product Management</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tech/">Tech</a></li></ul>
+                  
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/about/index.html">About</a></li>
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+
+              <h1 class="header"><a class="page-title-link" href="/categories/Programming/">Programming</a></h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-archive/dev-box-setup-ruby-on-rails-on-windows-7" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      Ruby on Rails on Windows 7
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2011/02/02/archive/dev-box-setup-ruby-on-rails-on-windows-7/" class="article-date">
+  <time datetime="2011-02-01T22:40:11.000Z" itemprop="datePublished">2011-02-02</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p>I recently set up my dev box at home with Ruby on Rails. I am running Windows 7 64-bit on my machine, and after working through a number of issues, I now have a nice dev box setup on Windows 7. Here you go, detailed instructions in case you want to replicate this!<a id="more"></a></p>
+<p><strong><span style="text-decoration:underline;">BASIC RAILS SETUP</span></strong></p>
+<ul>
+<li><strong>Download &amp; install Ruby</strong>: Choose version 1.8.7-p302 (1.8.7-p330 has issues installing rails on Windows 7 64-bit; 1.9.2-p136 has issues with bundler). Here is a link to the installer: <a href="http://rubyforge.org/frs/download.php/72085/rubyinstaller-1.8.7-p302.exe" title="http://rubyforge.org/frs/download.php/72085/rubyinstaller-1.8.7-p302.exe" target="_blank" rel="external">http://rubyforge.org/frs/download.php/72085/rubyinstaller-1.8.7-p302.exe</a>. Choose to install this in the default library of c:ruby187.</li>
+<li><p><strong>Open a ruby command prompt &amp; install rails</strong>: Open a ruby command prompt. Create a directory your rails projects &amp; switch to this. Run the command to download &amp; install rails.</p>
+<blockquote>
+<p>c:rails_projects&gt; gem install rails</p>
+</blockquote>
+</li>
+<li><p><strong>Download &amp; install SQLite</strong>: Download SQLite - you need to download the SQLite shell (<a href="http://www.sqlite.org/sqlite-shell-win32-x86-3070500.zip" target="_blank" rel="external">here</a>) and the SQLite DLL’s (<a href="http://www.sqlite.org/sqlite-dll-win32-x86-3070500.zip" target="_blank" rel="external">here</a>). Unzip these archives, and move the files in them to c:ruby187bin.</p>
+</li>
+<li><p><strong>Create a rails project</strong>: It’s time to create a rails test project. From the ruby command line, run these lines:</p>
+<blockquote>
+<p>c:rails_projects&gt; rails new test_project</p>
+<p>c:rails_projects&gt; cd test_project</p>
+<p>c:rails_projectstest_project&gt; bundle install</p>
+<p>c:rails_projectstest_project&gt; rails s</p>
+</blockquote>
+</li>
+<li><p>If all this goes flawlessly, then you have a basic, up and running rails installation. Verify this by going to <a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a>, and you should see the Ruby on Rails welcome page.<br><strong><span style="text-decoration:underline;">SETTING UP VERSION CONTROL</span></strong></p>
+</li>
+<li><p><strong>Install and set up Git: </strong>Download Git, a version control system, and install it. The right Windows binary for this is <a href="http://code.google.com/p/msysgit/downloads/detail?name=Git-1.7.2.3-preview20100911.exe&amp;can=2&amp;q=" target="_blank" rel="external">here</a>. During the installation, few things that are important to do are -</p>
+<ul>
+<li>Choose the check-boxes for Windows Explorer integration.</li>
+<li>Choose the “Run Git from Windows Command Prompt” radio-box.</li>
+</ul>
+</li>
+<li><p><strong>Create a local Git repository</strong>: From your command prompt, run the following commands to initialize and create a repository:</p>
+<blockquote>
+<p>c:rails_projectstest_project&gt; git config —global user.name “Example User”</p>
+<p>c:rails_projectstest_project&gt; git config —global user.email “user@example.com”</p>
+<p>c:rails_projectstest_project&gt; git init</p>
+<p>c:rails_projectstest_project&gt; git add .</p>
+<p>c:rails_projectstest_project&gt; git commit -am “First checkin!”</p>
+</blockquote>
+</li>
+<li><p><strong>Create a GitHub account &amp; push your repository</strong>:</p>
+<ul>
+<li>Go to <a href="www.github.com">www.github.com</a> and sign up for a free account.</li>
+<li>Create a public key - a great guide to doing this is <a href="http://help.github.com/msysgit-key-setup/" target="_blank" rel="external">here</a>. You may need to drop in to Git Bash shell under Git in your start menu to run the ssh-keygen command.</li>
+<li>Sign in to your GitHub account, go to “Account Settings” and “SSH Public Keys” and set your public key there.</li>
+<li>Create a new GitHub repository from the home page of your Git account - you may want to name this test_project (just as the rails project you have above).</li>
+<li>Run the following commands from your command line to push your local test project repository to GitHub, replacing the username &amp; project name below.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>c:rails_projectstest_project&gt; git remote add origin git@github.com:&lt;username/project_name.git&gt;</p>
+<p>c:rails_projectstest_project&gt; git push origin master<em>   Now you have your project running, under source control and backed up to GitHub! Make it a habit to run git commit often, and then git push master to push the changes to GitHub!<br><em>*HOSTING AN APP ON HEROKU</em></em></p>
+</blockquote>
+<ul>
+<li>Go to <a href="www.heroku.com">www.heroku.com</a> and sign up for an account.</li>
+<li><p>Run the following line from the command line to install the gem for Heroku &amp; push your files to the Heroku service:</p>
+<blockquote>
+<p>c:rails_projectstest_project&gt; gem install heroku</p>
+<p>c:rails_projectstest_project&gt; heroku create</p>
+<p>c:rails_projectstest_project&gt; git push heroku master</p>
+<p>c:rails_projectstest_project&gt; heroku open</p>
+</blockquote>
+</li>
+<li><p>If all goes well, you should now see the default Ruby on Rails welcome page hosted on Heroku - your test app is now on Heroku!<br><strong>OTHER THINGS I LIKE ON MY DEV BOX!</strong></p>
+</li>
+<li><p><strong>Install SQLite Browser</strong>: Get this for Windows from <a href="http://sourceforge.net/projects/sqlitebrowser/" target="_blank" rel="external">http://sourceforge.net/projects/sqlitebrowser/</a>. This allows you to open up and view your database files in a nice GUI.</p>
+</li>
+<li><strong>Install Sublime Text editor</strong>: I love this text editor, and absolutely recommend it for Rails development - get it from <a href="http://www.sublimetext.com/" target="_blank" rel="external">http://www.sublimetext.com/</a>.</li>
+<li><strong>Install curl</strong>: This will allow you to check the REST-fulness of your URL’s. Get it from: <a href="http://curl.haxx.se/download.html" target="_blank" rel="external">http://curl.haxx.se/download.html</a>.</li>
+<li><strong>Install putty</strong>:  This will allow you to FTP your files to your ISP, in case you have hosting elsewhere. Get it from: <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank" rel="external">http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html</a>.</li>
+<li><strong>IDE: NetBeans or Aptana</strong>? You could either install the NetBeans IDE for Ruby or the Aptana Studio IDE. I am not an IDE kind of guy myself, but I have heard that NetBeans works better on Windows. You can get it from here: <a href="http://netbeans.org/downloads/index.html" target="_blank" rel="external">http://netbeans.org/downloads/index.html</a>.<br>You should be all set up now with everything you need for regular, on-going Ruby on Rails development from Windows!</li>
+</ul>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://yoursite.com/2011/02/02/archive/dev-box-setup-ruby-on-rails-on-windows-7/" data-id="ci9soapun007wvrovr69vi611" class="article-share-link">Share</a>
+        
+        
+      </footer>
+    </div>
+  </article>
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>follow:</p>
+    <ul class="social-links">
+      
+        <li><a class="social-tooltip" title="twitter" href="http://twitter.com/appa" target="_blank"><i id="icon-twitter" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="github" href="https://github.com/arunr" target="_blank"><i id="icon-github" class="icon"></i></a></li>
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2011/02/02/archive/young-at-heart-how-to-be-an-innovator-for-life/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <p class="article-nav-title">
+        
+          How to be an innovator for life
+        
+      </p>
+      <i class="icon" id="icon-chevron-right"></i>
+    </a>
+  
+  
+    <a href="/2011/02/02/archive/gifts/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <p class="article-nav-title">Two precious gifts</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">recents</h3>
+    <div class="widget">
+      <ul id="recent-post" class="no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a></p>
+              <p class="item-title"><a href="/2015/05/16/material_design/" class="title">Material Design with AngularJS</a></p>
+              <p class="item-date"><time datetime="2015-05-16T10:10:55.000Z" itemprop="datePublished">2015-05-16</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a></p>
+              <p class="item-title"><a href="/2015/05/14/travel_app/" class="title">Travel app in 2 hours: Sabre, LumX, NodeJS and Angular</a></p>
+              <p class="item-date"><time datetime="2015-05-14T10:51:04.000Z" itemprop="datePublished">2015-05-14</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a></p>
+              <p class="item-title"><a href="/2015/01/02/archive/12-languages-in-12-months/" class="title">12 languages in 12 months:</a></p>
+              <p class="item-date"><time datetime="2015-01-01T22:02:31.000Z" itemprop="datePublished">2015-01-02</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Product-Management/">Product Management</a></p>
+              <p class="item-title"><a href="/2014/10/15/archive/be-a-technologist/" class="title">Be a technologist!</a></p>
+              <p class="item-date"><time datetime="2014-10-15T16:25:57.000Z" itemprop="datePublished">2014-10-15</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a></p>
+              <p class="item-title"><a href="/2014/09/17/archive/how-to-use-cordova-network-plugin-in-angularjs/" class="title">How to use Cordova network plugin in AngularJS</a></p>
+              <p class="item-date"><time datetime="2014-09-17T10:15:33.000Z" itemprop="datePublished">2014-09-17</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Fatherhood/">Fatherhood</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Journal/">Journal</a><span class="category-list-count">98</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Poetry/">Poetry</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Product-Management/">Product Management</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/">Tech</a><span class="category-list-count">19</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09/">September 2013</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07/">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03/">March 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02/">February 2011</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12/">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11/">November 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05/">May 2010</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06/">June 2009</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06/">June 2008</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03/">March 2008</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01/">January 2008</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12/">December 2007</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11/">November 2007</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10/">October 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09/">September 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08/">August 2007</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07/">July 2007</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06/">June 2007</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05/">May 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/03/">March 2006</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/02/">February 2006</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/01/">January 2006</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://twyst.in">Twyst</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon" id="icon-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/" class="logo"></a>
+        </h1>
+        <p>&copy; 2015 Arun Rajappa</p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+
+  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+  <script src="/scrollLoading/jquery.scrollLoading.js" type="text/javascript"></script>
+  <script src="/scrollLoading/main.js" type="text/javascript"></script>
+
+
+<script src="/js/html-patch.js" type="text/javascript"></script>
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
