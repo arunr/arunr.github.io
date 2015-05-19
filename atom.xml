@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://appapappa.com/"/>
-  <updated>2015-05-17T14:55:03.000Z</updated>
+  <updated>2015-05-19T15:33:53.000Z</updated>
   <id>http://appapappa.com/</id>
   
   <author>
@@ -13,6 +13,118 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Getting started with Hexo]]></title>
+    <link href="http://appapappa.com/2015/05/19/getting-started-with-hexo/"/>
+    <id>http://appapappa.com/2015/05/19/getting-started-with-hexo/</id>
+    <published>2015-05-19T14:42:56.000Z</published>
+    <updated>2015-05-19T15:33:53.000Z</updated>
+    <content type="html"><![CDATA[<p>I decided last week to get back to blogging last week. I was looking an alternative to <a href="https://wordpress.com/" target="_blank" rel="external">Wordpress</a>, which I was tired of for many reasons:</p>
+<ul>
+<li>It felt big &amp; slow</li>
+<li>It felt “closed” &amp; old.</li>
+<li>It wasn’t developer friendly:<br>  — I wanted to put write in Markdown<br>  — I wanted to put in code blocks and have them formatted.</li>
+</ul>
+<p>After a bit of Googling, I saw that <a href="http://jekyllrb.com/" target="_blank" rel="external">Jekyll</a> with <a href="https://pages.github.com/" target="_blank" rel="external">GitHub pages</a> for hosting was a popular option. Though this looked promising, I just couldn’t wrap my head around Jekyll. It was bigger than what I had in mind, and just didn’t fit me. GitHub pages seemed sweet though.</p>
+<p>The search continued, and then I found <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>. It was love at first sight. The initial set up was painless, there were many themes and plugins and the write/publish workflow was smooth.</p>
+<p>Here’s my guide on <strong>“Getting started with Hexo”</strong>, follow along and let’s get a bit of lovin’ over to you!</p>
+<h2 id="The_initial_set_up">The initial set up</h2><p>Assuming you have node installed on your machine, this is fairly simple. On my Mac, this installs the hexo command line interface:<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -<span class="keyword">g</span> hexo-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></p>
+<p>After this, I initialized my blog directory &amp; saved the node modules needed for the blog to render:<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo init appapappa</span><br><span class="line"><span class="variable">$ </span>npm install hexo --save</span><br></pre></td></tr></table></figure></p>
+<p>This done, I was all set to power up hexo and check-it out:</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">server</span></span><br></pre></td></tr></table></figure>
+<p>And then power up Chrome at <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> to see something like this…</p>
+<p>This done, it was time to configure hexo. Hexo has a very simple YAML config file under _config.yml.</p>
+<p>This is how my config file started to look after a few simple customizations; the main things I changed were the title, the author, the language (to en), the URL and the default category from uncategorized to journal.</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line"><span class="string">title:</span> a cuppa appa</span><br><span class="line"><span class="string">subtitle:</span></span><br><span class="line"><span class="string">description:</span></span><br><span class="line"><span class="string">author:</span> Arun Rajappa</span><br><span class="line"><span class="string">language:</span> en</span><br><span class="line"><span class="string">timezone:</span></span><br><span class="line"></span><br><span class="line"># URL</span><br><span class="line">## If your site is put <span class="keyword">in</span> a subdirectory, set url <span class="keyword">as</span> <span class="string">'http://yoursite.com/child'</span> and root <span class="keyword">as</span> <span class="string">'/child/'</span></span><br><span class="line"><span class="string">url:</span> <span class="string">http:</span><span class="comment">//appapappa.com</span></span><br><span class="line"><span class="string">root:</span> /</span><br><span class="line"><span class="string">permalink:</span> :year<span class="regexp">/:month/</span>:day<span class="regexp">/:title/</span></span><br><span class="line"><span class="string">permalink_defaults:</span></span><br><span class="line"></span><br><span class="line"># Directory</span><br><span class="line"><span class="string">source_dir:</span> source</span><br><span class="line"><span class="string">public_dir:</span> <span class="keyword">public</span></span><br><span class="line"><span class="string">tag_dir:</span> tags</span><br><span class="line"><span class="string">archive_dir:</span> archives</span><br><span class="line"><span class="string">category_dir:</span> categories</span><br><span class="line"><span class="string">code_dir:</span> downloads/code</span><br><span class="line"><span class="string">i18n_dir:</span> :lang</span><br><span class="line"><span class="string">skip_render:</span></span><br><span class="line"></span><br><span class="line"># Writing</span><br><span class="line"><span class="string">new_post_name:</span> :title.md # File name of <span class="keyword">new</span> posts</span><br><span class="line"><span class="string">default_layout:</span> post</span><br><span class="line"><span class="string">titlecase:</span> <span class="literal">false</span> # Transform title into titlecase</span><br><span class="line"><span class="string">external_link:</span> <span class="literal">true</span> # Open external links <span class="keyword">in</span> <span class="keyword">new</span> tab</span><br><span class="line"><span class="string">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="string">render_drafts:</span> <span class="literal">false</span></span><br><span class="line"><span class="string">post_asset_folder:</span> <span class="literal">true</span></span><br><span class="line"><span class="string">relative_link:</span> <span class="literal">false</span></span><br><span class="line"><span class="string">future:</span> <span class="literal">true</span></span><br><span class="line"><span class="string">highlight:</span></span><br><span class="line"><span class="label">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="label">  line_number:</span> <span class="literal">true</span></span><br><span class="line"><span class="label">  tab_replace:</span></span><br><span class="line"></span><br><span class="line"># Category &amp; Tag</span><br><span class="line"><span class="string">default_category:</span> journal</span><br><span class="line"><span class="string">category_map:</span></span><br><span class="line"><span class="string">tag_map:</span></span><br><span class="line"></span><br><span class="line"># Date / Time format</span><br><span class="line">## Hexo uses Moment.js to parse and display date</span><br><span class="line">## You can customize the date format <span class="keyword">as</span> defined <span class="keyword">in</span></span><br><span class="line">## <span class="string">http:</span><span class="comment">//momentjs.com/docs/#/displaying/format/</span></span><br><span class="line"><span class="string">date_format:</span> YYYY-MM-DD</span><br><span class="line"><span class="string">time_format:</span> <span class="string">HH:</span><span class="string">mm:</span>ss</span><br><span class="line"></span><br><span class="line"># Pagination</span><br><span class="line">## Set per_page to <span class="number">0</span> to disable pagination</span><br><span class="line"><span class="string">per_page:</span> <span class="number">10</span></span><br><span class="line"><span class="string">pagination_dir:</span> page</span><br><span class="line"></span><br><span class="line"># Extensions</span><br><span class="line">## <span class="string">Plugins:</span> <span class="string">http:</span><span class="comment">//hexo.io/plugins/</span></span><br><span class="line">## <span class="string">Themes:</span> <span class="string">http:</span><span class="comment">//hexo.io/themes/</span></span><br><span class="line"><span class="string">theme:</span> landscape</span><br></pre></td></tr></table></figure>
+<h2 id="Themes_:_Install_&amp;_Configure">Themes : Install &amp; Configure</h2><p>Working with themes is easy in Hexo, so this is what I did next: I looked at the themes available for Hexo, and decided to get the Hueman theme which looked good:<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>git clone <span class="symbol">https:</span>/<span class="regexp">/github.com/ppoffice</span><span class="regexp">/hexo-theme-hueman.git themes/hueman</span></span><br></pre></td></tr></table></figure></p>
+<p>I then had to make a few changes to configure this, firstly in the _config.yml in the root directory, I changed the theme from landscape to hueman:<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">theme</span>: <span class="string">hueman</span></span><br></pre></td></tr></table></figure></p>
+<p>I also read up the documentation about Hueman and configured it like so, by modifying the _config.yml under the themes/hueman directory:<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Logo Url</span></span><br><span class="line"><span class="comment"># Please enter the absolute path to your logo file</span></span><br><span class="line"><span class="comment"># or remove the following line with replacing logo-header.png with your own logo</span></span><br><span class="line"><span class="comment"># logo:</span></span><br><span class="line"><span class="comment"># Header</span></span><br><span class="line">menu:</span><br><span class="line">  Home: /</span><br><span class="line">  <span class="comment"># Delete this row if you don't want categories in your header nav bar</span></span><br><span class="line">  Categories:</span><br><span class="line">  About: /about/index.html</span><br><span class="line"></span><br><span class="line"><span class="comment"># Article list grouped by year</span></span><br><span class="line">groupByYear: <span class="constant">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Content</span></span><br><span class="line">fancybox: <span class="constant">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Thumbnail</span></span><br><span class="line">thumbnail: <span class="constant">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Scroll Loading</span></span><br><span class="line">scrollLoading: <span class="constant">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Sidebar</span></span><br><span class="line">social_links:</span><br><span class="line">  twitter: <span class="keyword">http</span>://twitter.com/appa</span><br><span class="line">  github: <span class="keyword">https</span>://github.com/arunr</span><br><span class="line">  rss: atom.xml</span><br><span class="line">widgets:</span><br><span class="line">- recent_posts</span><br><span class="line">- category</span><br><span class="line">- archive</span><br><span class="line">- links</span><br><span class="line"></span><br><span class="line"><span class="comment"># Links</span></span><br><span class="line">links:</span><br><span class="line">  Twyst: <span class="keyword">http</span>://twyst.<span class="operator">in</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Don't Use Google APIs if you are in google-blocked areas</span></span><br><span class="line">use_google_apis: <span class="constant">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Miscellaneous</span></span><br><span class="line">google_analytics:</span><br><span class="line">favicon: /favicon.png</span><br><span class="line">fb_admins:</span><br><span class="line">fb_app_id:</span><br></pre></td></tr></table></figure></p>
+<p>Since many of my posts didn’t have thumbnails, I set thumnail to false, I set up the social links correctly, removed the tag and tagcloud widgets that I didn’t want, set up the links I wanted and left it at that for the moment.</p>
+<p>With my theme configured, it was looking like this now:</p>
+<p>I then created a new post, and edited it with my favourite markdown editor, <a href="http://atom.io" target="_blank" rel="external">Atom.io</a>:<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">new</span> blog_ready</span><br></pre></td></tr></table></figure></p>
+<p>When editing my new posts, there’s a bit of configuration at the top of each post that allows Hexo to give it a title, tags, categories etc. That’s this section:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title: &#34;Getting started with Hexo&#34;&#10;date: 2015-05-19 20:12:56&#10;tags:&#10;categories:&#10;  - tech&#10;---</span><br></pre></td></tr></table></figure>
+<p>And below that is just beautiful, simple content in Markdown. Now it was time to publish my awesome blog…</p>
+<h2 id="Publishing_to_GitHub_&amp;_setting_up_GoDaddy">Publishing to GitHub &amp; setting up GoDaddy</h2><p>Publishing to GitHub is fairly painless. There is some initial set up to do on GitHub, which is captured well <a href="https://pages.github.com/" target="_blank" rel="external">here</a>. All you need to do though is just the first step: to create a new repo on GitHub called <em>username</em>.github.io.</p>
+<p>After that, install the Git Deployer plugin:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="operator"><span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure></p>
+<p>After that, you need to change your _config.yml file in the root directory of your blog like this:</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: <span class="attribute">https</span>:<span class="comment">//github.com/_username_/&lt;username&gt;.github.io</span></span><br></pre></td></tr></table></figure>
+<p>Now, you should be all set to deploy! Run<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo deploy</span><br></pre></td></tr></table></figure></p>
+<p>And then visit <a href="http://_username_.github.io" target="_blank" rel="external">http://_username_.github.io</a> to see your blog show up (if everything goes well!).</p>
+<p>To configure your own domain, things couldn’t be simpler:</p>
+<ol>
+<li><p>Go to GoDaddy (or your domain provider) and add an A Record for the following IP address in your domain management:</p>
+<ul>
+<li>192.30.252.153</li>
+<li>192.30.252.154</li>
+</ul>
+</li>
+<li><p>In your GitHub repo (<em>username</em>.github.io), create a file called CNAME that just has the name of your domain (appapappa.com).</p>
+</li>
+</ol>
+<p>That’s it - after this visit <a href="http://domainname.com" target="_blank" rel="external">http://domainname.com</a> and you’ll see your blog up!</p>
+<h2 id="Migrating_content_from_WordPress">Migrating content from WordPress</h2><p>The next step was to get over the content from my existing Wordpress blog. This was very painless too. First, I had to install the Wordpress Migrator plugin</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="operator"><span class="keyword">install</span> hexo-migrator-wordpress <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<p>Then, I went into my WordPress admin panel and exported all my content. After that, it was easy-peasy:</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo migrate wordpress ~<span class="regexp">/Downloads/appapappa</span>.xml</span><br></pre></td></tr></table></figure>
+<p>With that done, I could see all my posts migrated into the _posts folder of Hexo (under source). I visited <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> and checked that all my WordPress content was there - cool!</p>
+<h2 id="Tag_plugins">Tag plugins</h2><p>When checking my WordPress migrated content, I noticed that some of my posts didn’t show up correctly - esepecially the ones with references to YouTube or <a href="https://gist.github.com/" target="_blank" rel="external">Gists</a> embedded in them. This required fixing up, using what Hexo calls “Tag plugins”, but it couldn’t have been easier:</p>
+<ol>
+<li><p>For YouTube: just edit your migrated WordPress post, and put in the fragment below to handle showing videos from YouTube.</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="preprocessor">%</span> youtube video_id <span class="preprocessor">%</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>For Gists: edit your migrated WordPress post, and put in this fragment to embed the Gist.</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="preprocessor">%</span> gist gist_id <span class="preprocessor">%</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>Hexo has a number of other tag plugins, all listed <a href="https://hexo.io/docs/tag-plugins.html" target="_blank" rel="external">here</a></p>
+<h2 id="Configuring_a_few_other_things…">Configuring a few other things…</h2><p>This were looking sweet now - I had my theme figured out, had written a post, deployed to GitHub and my own domain, migrated my WordPress content and even fixed up issues with them. What could be left? Well there were a number of things, lets look at each of them:</p>
+<ol>
+<li><strong>Comments</strong>: At this time, I noticed that I didn’t have comments on my blog. Now, what is a blog without comments? Boring, that’s what! The way Hexo fixes this up is by integrating <a href="https://disqus.com/" target="_blank" rel="external">Disqus</a> into your blog. To do this, you will need to sign-up for Disqus, and then once you have your Disqus ID, add this to your _config.yml file:</li>
+</ol>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">disqus_shortname</span>: <span class="string">&lt;your shortname&gt;</span></span><br></pre></td></tr></table></figure>
+<p>That’s it - you’ll have comments enabled on your posts now!</p>
+<ol>
+<li><strong>RSS</strong>: I also wanted for my blog to show up as an Atom/RSS feed. For this, I needed to do three things. Firstly, I had to install the RSS plugin.<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="operator"><span class="keyword">install</span> hexo-generator-feed <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>I then had to update the _config.yml file in the root directory with this:<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">feed</span>:</span><br><span class="line">  <span class="attribute">type</span>: atom</span><br><span class="line">  <span class="attribute">path</span>: atom.xml</span><br><span class="line">  <span class="attribute">limit</span>: <span class="number">20</span></span><br></pre></td></tr></table></figure></p>
+<p>I then had to update the _config.yml file in the Hueman theme directory, so I could link to the RSS feed:<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">social_links</span>:</span><br><span class="line">  <span class="attribute">rss</span>: atom.xml</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><strong>Search</strong>: For this, I had to do two things - sign-up for <a href="https://www.google.com/webmasters/tools/" target="_blank" rel="external">Google Webmaster Tools</a>, and then submit the sitemap.xml. To create the sitemap.xml, this is what I did:<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="operator"><span class="keyword">install</span> hexo-generator-sitemap <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>Once that’s done, re-generate your blog which will create the sitemap, and submit the sitemap.xml to Google, in the Webmaster Tools UI.<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo generate</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>Analytics: This was very simple, you just need to sign-up for <a href="http://www.google.com/analytics/" target="_blank" rel="external">Google Analytics</a>, and once you have a tracking ID, update your blog _config.yml with this information:<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">google_analytics</span>: <span class="string">&lt;your tracking ID&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>All set now - comments, search, analytics and RSS all set up!</p>
+<h2 id="Write-Publish_workflow">Write-Publish workflow</h2><p>Whew, the initial set-up took some time, but now my workflow is really simple:</p>
+<ol>
+<li><p>Create a new post</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">new</span> &lt;postname&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Write the post using my favourite editor, Atom.IO.</p>
+</li>
+<li><p>Deploy to my blog after verifying locally:</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo deploy</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>And that’s it!</p>
+<h2 id="Closing_thoughts">Closing thoughts</h2><p>I’m really liking Hexo, and haven’t found anything wanting in it so far. I can write posts in Markdown, with code blogs, and deploy to my domain very easily.</p>
+<p>The only thing I may want is more variety of themes - but the nice thing is that I could imagine me being able to do this myself.</p>
+<p>My verdict: Hexo is a fantastic platform for developers, and if you are writing about programming or technology, definitely give Hexo a spin!</p>
+<p>Happy blogging, <a href="http://www.twitter.com/appa" target="_blank" rel="external">@appa</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>I decided last week to get back to blogging last week. I was looking an alternative to <a href="https://wordpress.com/" target="_blank" r]]>
+    </summary>
+    
+      <category term="tech" scheme="http://appapappa.com/categories/tech/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Material Design with AngularJS]]></title>
@@ -224,6 +336,27 @@
     </summary>
     
       <category term="Programming" scheme="http://appapappa.com/categories/Programming/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Yakity Yak]]></title>
+    <link href="http://appapappa.com/2015/02/06/yakity-yak/"/>
+    <id>http://appapappa.com/2015/02/06/yakity-yak/</id>
+    <published>2015-02-06T03:33:49.000Z</published>
+    <updated>2015-05-18T03:34:44.000Z</updated>
+    <content type="html"><![CDATA[<p>Let me hold you tight<br>Through the night<br>My trembling child<br>From your dark and wild<br>dreams.</p>
+<p>You looked so sad<br>That I wish I had<br>The power to steal<br>Your thoughts, to feel<br>your pain.</p>
+<p>I wish you’d smile<br>It’s been a while<br>Since I gazed<br>On that radiant face<br>of yours.</p>
+<p>What ails you now<br>I don’t know and how<br>I pray you’ll be<br>Without misery<br>or grief.</p>
+<p>I want you back<br>Just yakity-yak<br>You and me<br>So happy and free<br>like before.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Let me hold you tight<br>Through the night<br>My trembling child<br>From your dark and wild<br>dreams.</p>
+<p>You looked so sad<br>That I]]>
+    </summary>
+    
+      <category term="Poetry" scheme="http://appapappa.com/categories/Poetry/"/>
     
   </entry>
   
@@ -673,61 +806,6 @@
     </summary>
     
       <category term="Tech" scheme="http://appapappa.com/categories/Tech/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Book Review: Discover Meteor]]></title>
-    <link href="http://appapappa.com/2013/09/05/archive/book-review-discover-meteor/"/>
-    <id>http://appapappa.com/2013/09/05/archive/book-review-discover-meteor/</id>
-    <published>2013-09-04T23:24:56.000Z</published>
-    <updated>2015-05-17T14:47:12.000Z</updated>
-    <content type="html"><![CDATA[<p>[caption id=”” align=”alignright” width=”246”]<a href="http://www.discovermeteor.com/" target="_blank" rel="external"><img src="http://www.discovermeteor.com/images/meteor_book_illustration.png" alt=""></a> Discover Meteor[/caption]</p>
-<p>I read and worked through the examples of the <a href="http://www.discovermeteor.com" target="_blank" rel="external">Discover Meteor</a> book yesterday (“The Main Sequence” edition), here’s a review of the book:</p>
-<p>First, the 3 pros:</p>
-<blockquote>
-<ul>
-<li><strong>Quality of writing &amp; pictures</strong>: <strong>Excellent</strong>. The concepts of Meteor are explained in simple language and with very easy to understand pictures. It is easy to get through the book very fast, because the writing is straight-forward and simple.</li>
-<li><strong>Quality of code &amp; examples</strong>: Very good, easy to follow along, and all the code is correct and works first time.</li>
-<li><strong>Explanation of concepts</strong>: The sidebars that explain Meteor concepts are well written, especially the two sidebars on publications &amp; subscriptions and denormalization.<br>Now, the 2 cons:</li>
-<li><strong>The price</strong>: At $39, it is expensive for the 200-odd pages that the book packs. While useful, I would hesitate to pay this price. As a side note, I considered the other editions (Red Giant and White Dwarf) that I would have loved to get, but balked at the price, which is even more expensive in Indian Rupees (considering that the Rupee is now at 65 to the $).</li>
-<li><strong>Stops short: </strong>The book goes through the example application in detail, and covers some concepts in the sidebars. I would have liked it to cover an application end-to-end, go deeper into the concepts behind Meteor and also provides a API reference. This book stopped short of going deep into the details of Meteor, and I was left feeling a little thirsty for more information. My ideal book would be structured like “<a href="http://pragprog.com/book/rails4/agile-web-development-with-rails-4" target="_blank" rel="external">Agile Web Development with Rails</a>“. Of course, areas like testing are also not covered in much depth, but this is understandable given that Meteor itself is evolving fast on these areas.<br>Overall, I found that this is a great (if expensive) way to get started with <a href="http://www.meteor.com/" target="_blank" rel="external">Meteor</a>, but it will not become the definitive guide on Meteor for me - which I was hoping it would be. Overall, I give it a 3.5 out of 5 star rating!</li>
-</ul>
-</blockquote>
-<p>(I am going to be reading through the book leisurely again over the weekend, and I”ll post any additional review comments below this line!)</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>[caption id=”” align=”alignright” width=”246”]<a href="http://www.discovermeteor.com/" target="_blank" rel="external"><img src="http://ww]]>
-    </summary>
-    
-      <category term="Tech" scheme="http://appapappa.com/categories/Tech/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Go for lunch with your devs & test]]></title>
-    <link href="http://appapappa.com/2013/09/04/archive/go-for-lunch-with-your-devs-test/"/>
-    <id>http://appapappa.com/2013/09/04/archive/go-for-lunch-with-your-devs-test/</id>
-    <published>2013-09-04T07:04:58.000Z</published>
-    <updated>2015-05-17T12:59:19.000Z</updated>
-    <content type="html"><![CDATA[<div><a href="http://stripgenerator.com/strip/762859/lunch-with-devs/" target="_blank" rel="external"><img src="http://s3.amazonaws.com/stripgenerator/strip/95/82/67/00/00/full.png" alt=""></a><br><a href="http://stripgenerator.com/strip/762859/lunch-with-devs/" target="_blank" rel="external">Lunch with devs</a> by <a href="http://appapappa.stripgenerator.com/" title="appa" target="_blank" rel="external">appa</a></div><br><div><a id="more"></a></div>
-
-<hr>
-<p>If you’re new to product management or program management, I urge you to go for lunch - daily - with your dev and test team.</p>
-<p>The temptations to go out with other program managers for pad thai and bubble ice-tea, to hob-nob with your general manager at the wine and cheese social, or to go meet that cute girl in marketing for sushi and sake will be great. Resist!</p>
-<p>Yes, lunch with your developers will most probably mean Pizza and Coke. The conversation is unlikely to be about the soccer game between Chelsea and Arsenal. It most probably wont be about the resort in Hawai’i where they serve Pina Coladas at your doorstep. It most certainly wont be about where the stock price is at, and why it hasn’t moved up in ten years.</p>
-<p>The conversation will probably be about the impact of L3 cache on performance, what the interviewee said when asked how to convert integer to hex (“Using witchcraft?! Dude, he was so clueless!”), and what the dev lead said in his Yoda voice when the new dev told him “But I need your help.”</p>
-<p>But, it is worth it - if what you want is to ship great products. These lunches will help you:</p>
-<p>During my time at Microsoft, my best friends were indeed my devs and tests - and I can say that those daily lunches helped me make better product decisions and get things done faster from my dev &amp; test friends!</p>
-<p>So, go for lunch with your devs &amp; test.</p>
-<p><a href="http://act2.me/daily-product-management/" target="_blank" rel="external">Daily Product Management</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<div><a href="http://stripgenerator.com/strip/762859/lunch-with-devs/"><img src="http://s3.amazonaws.com/stripgenerator/strip/95/82/67/00/00/full.png" alt=""></a><br><a href="http://stripgenerator.com/strip/762859/lunch-with-devs/">Lunch with devs</a> by <a href="http://appapappa.stripgenerator.com/" title="appa">appa</a></div><br><div>]]>
-    
-    </summary>
-    
-      <category term="Product Management" scheme="http://appapappa.com/categories/Product-Management/"/>
     
   </entry>
   
