@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://appapappa.com/"/>
-  <updated>2015-05-19T17:03:43.000Z</updated>
+  <updated>2015-05-24T12:20:02.000Z</updated>
   <id>http://appapappa.com/</id>
   
   <author>
@@ -13,6 +13,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Test data in JavaScript]]></title>
+    <link href="http://appapappa.com/2015/05/24/test-data-in-javascript/"/>
+    <id>http://appapappa.com/2015/05/24/test-data-in-javascript/</id>
+    <published>2015-05-24T12:05:31.000Z</published>
+    <updated>2015-05-24T12:20:02.000Z</updated>
+    <content type="html"><![CDATA[<p>This is a quick post about generating test data in JavaScript. I recently needed a number of addresses, emails and phone numbers for testing some code I’d written, and I was sure that somebody had faced this problem before!</p>
+<p>So, I looked around, and found two really nice libraries, that can be used in the browser or on the server side.</p>
+<p>These are:</p>
+<ul>
+<li><a href="https://github.com/marak/Faker.js/" target="_blank" rel="external">Faker.js</a></li>
+<li><a href="http://chancejs.com/#location" target="_blank" rel="external">Chance.js</a></li>
+</ul>
+<p>Both of these libraries are under the permissive MIT license, which is great to check always when using 3rd party code.</p>
+<h2 id="Faker">Faker</h2><p>This is easy to get started with:<br><figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install faker --<span class="built_in">save</span>-<span class="built_in">dev</span></span><br></pre></td></tr></table></figure></p>
+<p>or<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bower <span class="keyword">install</span> faker</span><br></pre></td></tr></table></figure></p>
+<p>After that you can easily generate test data - a sample below:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> faker = <span class="built_in">require</span>(<span class="string">'faker'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(faker.name.firstName());</span><br><span class="line"><span class="built_in">console</span>.log(faker.address.streetAddress());</span><br><span class="line"><span class="built_in">console</span>.log(faker.lorem.words());</span><br><span class="line"><span class="comment">// ... and so on...</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Chance">Chance</h2><p>Again, fairly simple to get started with:<br><figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install chance --<span class="built_in">save</span>-<span class="built_in">dev</span></span><br></pre></td></tr></table></figure></p>
+<p>or<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bower <span class="keyword">install</span> chance</span><br></pre></td></tr></table></figure></p>
+<p>The nice thing with chance is it can also be installed and used from the command line. This is what we’ll see below:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g chance</span><br><span class="line">$ chance name <span class="comment">// Mrs. Myrtle Cook</span></span><br><span class="line">$ chance <span class="tag">address</span> <span class="comment">//1590 Muif Junction</span></span><br></pre></td></tr></table></figure></p>
+<p>That’s it - two nice libraries to generate test data, let me know if you use or know of other libraries!</p>
+<p>Thanks, <a href="http://twitter.com/appa" target="_blank" rel="external">@appa</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>This is a quick post about generating test data in JavaScript. I recently needed a number of addresses, emails and phone numbers for test]]>
+    </summary>
+    
+      <category term="javascript" scheme="http://appapappa.com/tags/javascript/"/>
+    
+      <category term="Programming" scheme="http://appapappa.com/categories/Programming/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Getting started with Hexo]]></title>
@@ -694,24 +727,6 @@
     </summary>
     
       <category term="Journal" scheme="http://appapappa.com/categories/Journal/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Meditation]]></title>
-    <link href="http://appapappa.com/2013/10/13/archive/meditation/"/>
-    <id>http://appapappa.com/2013/10/13/archive/meditation/</id>
-    <published>2013-10-13T00:54:36.000Z</published>
-    <updated>2015-05-17T14:55:06.000Z</updated>
-    <content type="html"><![CDATA[<p>I sit in solitude, breathing<br>In-out, in-out, eyes closed.<br>My mind is calm, <del>still</del><br>The silence new and disqueiting<br>A contrast to the turmoil within.</p>
-<p>When did you last really taste water?<br>Cool and fresh, a balm to parched throats.<br>When did you last really breath air?</p>
-<p>I sit in solitude, breathing<br>In-out, in-out, eyes closed.<br>My body is one, a machine,<br>The rhythm of my breath<br>A reminder that I am alive.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>I sit in solitude, breathing<br>In-out, in-out, eyes closed.<br>My mind is calm, <del>still</del><br>The silence new and disqueiting<br>A]]>
-    </summary>
-    
-      <category term="Poetry" scheme="http://appapappa.com/categories/Poetry/"/>
     
   </entry>
   
