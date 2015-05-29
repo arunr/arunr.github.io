@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://appapappa.com/"/>
-  <updated>2015-05-24T12:20:02.000Z</updated>
+  <updated>2015-05-29T09:13:57.000Z</updated>
   <id>http://appapappa.com/</id>
   
   <author>
@@ -15,10 +15,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[A house in Montmartre]]></title>
+    <link href="http://appapappa.com/2015/05/29/a-house-on-montmartre/"/>
+    <id>http://appapappa.com/2015/05/29/a-house-on-montmartre/</id>
+    <published>2015-05-29T09:12:27.000Z</published>
+    <updated>2015-05-29T09:13:57.000Z</updated>
+    <content type="html"><![CDATA[<p>We have been in Paris for two days now. We are in a lovely apartment in Montmartre. It is close to the Sacre Cour - perhaps a 10 minute walk up-hill.</p>
+<p>The apartment is owned by a Bengali lady who lives in Mumbai for part of the year. She had let the house on AirBnB, and Kanchuki found it there and did the bookings before we left.</p>
+<p>It is a tiny, cosy apartment - two rooms, a couple of very comfy beds, a small and functional kitchen, a water closet and a bathroom (with bath-tub for Nika!). Nika said “This is the best house I’ve been in”, and jumped on the bed when we entered the house.</p>
+<p>There is a lot of art and Indian curios around. One wall is covered with musical instruments - many of which I can’t identify. There are a few tablas and dhols in the living room, some on the ground, and some placed on top of bookshelves. Every nook of the house is filled with books. Books by Rabindranath Tagore, Indian history, Tantra, French poetry, poetry of Faiz Ahmed Faiz, books on film-making, and so on. There are even books in the water-closet, more pulpy, “The Da Vinci Code”, “The Hitchhikers Guide to the Galaxy”, and so.</p>
+<p>There are a two windows in the living room, which look out onto Rue Lepic. Right below there is a cafe, with people sipping coffee and smoking cigarettes through the day. Though it has been a little chill and gloomy in Paris, the street below always seems to catch the sun, and it is a cheery sight to look out of the window. The street wakes-up late, but stays up late too.</p>
+<p>Last night at ten p.m., with dusk just setting, the sounds of shrill voices, wine glasses, hearty laughter and dinners digesting lulled me into a jet-lagged slumber, which occupied me in strange dreams till I woke up this morning to catch the sight of the sun shining onto the Rue Lepic.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>We have been in Paris for two days now. We are in a lovely apartment in Montmartre. It is close to the Sacre Cour - perhaps a 10 minute w]]>
+    </summary>
+    
+      <category term="Journal" scheme="http://appapappa.com/categories/Journal/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Test data in JavaScript]]></title>
     <link href="http://appapappa.com/2015/05/24/test-data-in-javascript/"/>
     <id>http://appapappa.com/2015/05/24/test-data-in-javascript/</id>
-    <published>2015-05-24T12:05:31.000Z</published>
+    <published>2015-05-24T15:35:31.000Z</published>
     <updated>2015-05-24T12:20:02.000Z</updated>
     <content type="html"><![CDATA[<p>This is a quick post about generating test data in JavaScript. I recently needed a number of addresses, emails and phone numbers for testing some code I’d written, and I was sure that somebody had faced this problem before!</p>
 <p>So, I looked around, and found two really nice libraries, that can be used in the browser or on the server side.</p>
@@ -51,7 +72,7 @@
     <title><![CDATA[Getting started with Hexo]]></title>
     <link href="http://appapappa.com/2015/05/19/getting-started-with-hexo/"/>
     <id>http://appapappa.com/2015/05/19/getting-started-with-hexo/</id>
-    <published>2015-05-19T14:42:56.000Z</published>
+    <published>2015-05-19T18:12:56.000Z</published>
     <updated>2015-05-19T17:03:43.000Z</updated>
     <content type="html"><![CDATA[<p>I decided to get back to blogging last week. I was looking an alternative to <a href="https://wordpress.com/" target="_blank" rel="external">Wordpress</a>, which I was tired of for many reasons:</p>
 <ul>
@@ -165,7 +186,7 @@
     <title><![CDATA[Material Design with AngularJS]]></title>
     <link href="http://appapappa.com/2015/05/16/material_design/"/>
     <id>http://appapappa.com/2015/05/16/material_design/</id>
-    <published>2015-05-16T10:10:55.000Z</published>
+    <published>2015-05-16T13:40:55.000Z</published>
     <updated>2015-05-17T14:55:03.000Z</updated>
     <content type="html"><![CDATA[<p><img src="https://www.anony.ws/i/2015/05/15/airpair2462aa.png" alt="img caption"></p>
 <h2 id="The_back_story">The back story</h2><p>In my <a href="https://www.airpair.com/angularjs/posts/travel-app-in-2-hours" target="_blank" rel="external">earlier post</a>, I had written about how I built a travel app in a couple of hours using Sabre and LumX. At the end of that post I wrote that I wasn’t very happy with the UI. <a href="http://ui.lumapps.com/" target="_blank" rel="external">LumX</a> had looked good as a UI framework, but I wasn’t able to get <em>productive</em> with it: there weren’t enough examples, and the documentation wasn’t great.</p>
@@ -246,7 +267,7 @@
     <title><![CDATA[Travel app in 2 hours: Sabre, LumX, NodeJS and Angular]]></title>
     <link href="http://appapappa.com/2015/05/14/travel_app/"/>
     <id>http://appapappa.com/2015/05/14/travel_app/</id>
-    <published>2015-05-14T10:51:04.000Z</published>
+    <published>2015-05-14T14:21:04.000Z</published>
     <updated>2015-05-17T15:00:00.000Z</updated>
     <content type="html"><![CDATA[<h2 id="The_back_story">The back story</h2><p>I decided to build a travel web app this morning. I had been looking at the <a href="https://developer.sabre.com/" target="_blank" rel="external">Sabre Developer Studio</a> yesterday, and I wanted to get my hands dirty. I had also been looking at <a href="http://ui.lumapps.com/" target="_blank" rel="external">LumX</a> a few days ago, an AngularJS web frontend framework that implemented the <a href="http://www.google.com/design/spec/material-design/introduction.html" target="_blank" rel="external">Google Material Design</a> guidelines, and wanted to give it a spin.</p>
 <p><strong>Follow along</strong> to see how I did it - all the way from coding to deployment on EC2, built using ExpressJS &amp; Angular.</p>
@@ -378,7 +399,7 @@
     <title><![CDATA[My lover]]></title>
     <link href="http://appapappa.com/2015/04/02/my-lover/"/>
     <id>http://appapappa.com/2015/04/02/my-lover/</id>
-    <published>2015-04-02T04:26:28.000Z</published>
+    <published>2015-04-02T07:56:28.000Z</published>
     <updated>2015-05-21T04:49:18.000Z</updated>
     <content type="html"><![CDATA[<p>A desire builds up inside me<br>Slowly, like the pressing of waters<br>Against the walls of the dam<br>I need to see you now<br>For I haven’t met you in days<br>And I find it hard to breathe<br>When I am not in your bosom.</p>
 <p>The need is primal, animal<br>Something that can’t be explained<br>A wave that washes over me<br>A thirst that isn’t easily quenched.<br>A day or two in your arms each month<br>I need from you, my lover, my friend.<br>My husband doesn’t like it, this infidelity.</p>
@@ -396,7 +417,7 @@
     <title><![CDATA[A Conundrum]]></title>
     <link href="http://appapappa.com/2015/03/31/a-conundrum/"/>
     <id>http://appapappa.com/2015/03/31/a-conundrum/</id>
-    <published>2015-03-31T04:29:16.000Z</published>
+    <published>2015-03-31T07:59:16.000Z</published>
     <updated>2015-05-21T04:49:26.000Z</updated>
     <content type="html"><![CDATA[<p>You say I want to sabotage<br>My unique genius and talents<br>By giving in to base desires<br>And giving up on my dreams.</p>
 <p>You say I am craven, weak<br>Unfocused, unambitious<br>Purposeless, rudderless,<br>No motivation, direction, or determination.</p>
@@ -416,7 +437,7 @@
     <title><![CDATA[Brothers]]></title>
     <link href="http://appapappa.com/2015/03/30/brothers/"/>
     <id>http://appapappa.com/2015/03/30/brothers/</id>
-    <published>2015-03-30T04:30:59.000Z</published>
+    <published>2015-03-30T08:00:59.000Z</published>
     <updated>2015-05-21T04:49:34.000Z</updated>
     <content type="html"><![CDATA[<p>I see what you see, I smell what you smell<br>I hear what you hear, I dwell where you dwell<br>Yet I think what I think, I tell what I tell<br>My individual heaven, my own private hell.</p>
 <p>I grow older and wise, now I see things anew<br>I change my own ways, I walk now with you<br>The path we tread together, as brothers again<br>Which one is Abel, who knows who’s Cain?</p>
@@ -434,7 +455,7 @@
     <title><![CDATA[Nonsense verse with Nika]]></title>
     <link href="http://appapappa.com/2015/03/23/nonsense-verse-with-nika/"/>
     <id>http://appapappa.com/2015/03/23/nonsense-verse-with-nika/</id>
-    <published>2015-03-23T04:32:44.000Z</published>
+    <published>2015-03-23T09:02:44.000Z</published>
     <updated>2015-05-21T04:49:42.000Z</updated>
     <content type="html"><![CDATA[<p>The cat laid an egg<br>The king went to beg<br>The cow said bow wow<br>The clock said not now.</p>
 <p>The queen dressed in rags<br>The servant took the bags<br>To the market in the sea<br>Where the gold was for free!</p>
@@ -454,7 +475,7 @@
     <title><![CDATA[Too many words]]></title>
     <link href="http://appapappa.com/2015/03/15/too-many-words/"/>
     <id>http://appapappa.com/2015/03/15/too-many-words/</id>
-    <published>2015-03-15T04:34:31.000Z</published>
+    <published>2015-03-15T09:04:31.000Z</published>
     <updated>2015-05-21T04:46:36.000Z</updated>
     <content type="html"><![CDATA[<p>When you dance or play<br>There’s no need to say<br>A word, give direction<br>For your movement is a language<br>More ancient and articulate<br>Than those in the Tower of Babel.</p>
 <p>And yet, we talk and speak<br>The mighty and the meek,<br>In dialogue and debate<br>Diatribe, praise and gossip<br>When a hug or the lack of one<br>Says all that needs to be said.</p>
@@ -472,7 +493,7 @@
     <title><![CDATA[Why do we play?]]></title>
     <link href="http://appapappa.com/2015/03/08/why-do-we-play/"/>
     <id>http://appapappa.com/2015/03/08/why-do-we-play/</id>
-    <published>2015-03-08T04:25:24.000Z</published>
+    <published>2015-03-08T08:55:24.000Z</published>
     <updated>2015-05-21T04:49:08.000Z</updated>
     <content type="html"><![CDATA[<p>Do we play to be strong<br>Do we play to right a wrong?<br>Do we play to be quick &amp; fast<br>Or to avoid coming last?<br>So we can become very springy<br>With this amazing wonderful thingy<br>That we call I, me and mine?<br>Do we play to feel fine?<br>Do we play to become fit<br>Or do we play so we can hit<br>The ball at lightening speed?<br>I think we play to sow a seed.<br>A seed that grows very slow<br>Into a plant to tend and grow<br>Into a tree of tremendous joy<br>That makes me a man from boy<br>Who is strong and good and kind<br>Who is unafraid to speak his mind<br>About what is wrong and right<br>Who questions tyranny &amp; might<br>And asks each one to come and play<br>So that even the bullies may<br>Put aside their bravado and spite<br>And come to see the light<br>On the court or ground or gym<br>That I am a reflection of him.</p>
 ]]></content>
@@ -488,7 +509,7 @@
     <title><![CDATA[How Ganesha and Karthikaye both lost the race]]></title>
     <link href="http://appapappa.com/2015/02/13/ganesha-karthikaye/"/>
     <id>http://appapappa.com/2015/02/13/ganesha-karthikaye/</id>
-    <published>2015-02-13T04:41:57.000Z</published>
+    <published>2015-02-13T09:11:57.000Z</published>
     <updated>2015-05-21T04:48:58.000Z</updated>
     <content type="html"><![CDATA[<p>(A modern re-telling of an ancient story)</p>
 <p>Ganesh &amp; Karthikeya, Gods they sat<br>While along came Narad, mischievous, to chat.<br>“Who is faster, which of you<br>Is the speedier among the two?”</p>
@@ -528,7 +549,7 @@
     <title><![CDATA[Yakity Yak]]></title>
     <link href="http://appapappa.com/2015/02/06/yakity-yak/"/>
     <id>http://appapappa.com/2015/02/06/yakity-yak/</id>
-    <published>2015-02-06T03:33:49.000Z</published>
+    <published>2015-02-06T08:03:49.000Z</published>
     <updated>2015-05-18T03:34:44.000Z</updated>
     <content type="html"><![CDATA[<p>Let me hold you tight<br>Through the night<br>My trembling child<br>From your dark and wild<br>dreams.</p>
 <p>You looked so sad<br>That I wish I had<br>The power to steal<br>Your thoughts, to feel<br>your pain.</p>
@@ -549,7 +570,7 @@
     <title><![CDATA[The Stubborn Mule]]></title>
     <link href="http://appapappa.com/2015/01/29/the-stubborn-mule/"/>
     <id>http://appapappa.com/2015/01/29/the-stubborn-mule/</id>
-    <published>2015-01-29T03:05:53.000Z</published>
+    <published>2015-01-29T07:35:53.000Z</published>
     <updated>2015-05-18T03:07:48.000Z</updated>
     <content type="html"><![CDATA[<h2 id="For_Arty_Types,_or_“The_stubborn_mule”">For Arty Types, or “The stubborn mule”</h2><p>I brought in father to our school -<br>He who lived by book and rule.<br>“This isn’t a school” is what he said<br>“How will they earn their daily bread?<br>By painting pots? By singing song?<br>This isn’t right - most certainly wrong!”<br>He saw some more, and heaved a sigh,<br>“We’re so well to do, please then tell why<br>My granddaughter runs about with holes<br>In her shoes and pants and camisoles!<br>Sand in her hair, mud on her face<br>Where are the teachers? Who runs this place?”<br>Then all at once, a child ran up to dad<br>And said “You look angry, don’t be so sad”<br>“Just smile!” he said, and ran away<br>Done giving his gift, he went back to play.<br>Dad looked surprised, he smiled at last<br>A little wistfully, lost in the past<br>The lilt of music reached his ears<br>A familiar raaga, it brought out the tears<br>He wiped his eyes, got back his will<br>“Though it may be nice, I think it still<br>Is not an education, just play and fun<br>Just for arty types - not for everyone!”<br>I introduced dad to a close friend<br>Who held him tight, for minutes on end!<br>At last dad got away from his bear hug<br>He smiled a wan smile, he gave a shrug.<br>“If you’re sure it’s fine, it’s OK I guess<br>I can’t dictate anymore, only pray and bless<br>Just tutor her well, teach her arithmetic<br>And English, both writing and phonetic<br>Some Shakespeare - just the important plays<br>And maybe some Chinese - it’s such a craze these days!”<br>Just then a facilitator came up to dad<br>Embraced him warmly, and said “We’re so glad<br>that you could visit us in our space -<br>Look at your child - so much joy and grace -<br>She’s really a blessing - you must stay for lunch!”<br>Dad protested feebly, but I had a hunch<br>That he wanted to stay and sample the fare<br>Whose fragrant smells wafted through the air!<br>He ate slowly, enjoying the meal,<br>Chewing meditatively, taking in the feel<br>Of the calming space, the mellow sun<br>That cast rays of gold on everyone.<br>The screech of parrots in the tree above,<br>The caring adults, in whose silent love<br>The children played without a care<br>No fear, no hate - just purity there.<br>Lunch done, he silently washed his plate<br>With his granddaughter, seventy-five and eight<br>Together soaping and rinsing a spoon<br>When he suddenly realized that all too soon<br>She’d be all grown up, and he wouldn’t be there<br>To wash spoons with her, to talk, to share<br>So he paused, and took in that entire breath<br>And knew that in her, he was safe from death<br>For even when he was dead and gone,<br>He lived in her - and so, on and on.<br>We drove back home in silence then<br>Mom opened the door, and later when<br>She asked my dad “So, how was school?”<br>“For arty types” said the stubborn mule.</p>
 <p>© 2015 Microsoft Terms Privacy &amp; cookies Developers English (United States)</p>
@@ -566,7 +587,7 @@
     <title><![CDATA[Marjorie Gluten]]></title>
     <link href="http://appapappa.com/2015/01/22/marjorie-gluten/"/>
     <id>http://appapappa.com/2015/01/22/marjorie-gluten/</id>
-    <published>2015-01-22T02:57:10.000Z</published>
+    <published>2015-01-22T07:27:10.000Z</published>
     <updated>2015-05-18T03:00:12.000Z</updated>
     <content type="html"><![CDATA[<p>Marjorie Gluten lived on carbs<br>Through school and college suffered barbs<br>About her girth, about her weight<br>Which brought her down, so she ate and ate.</p>
 <p>She ate more rice, she ate more wheat<br>And lots of cake and lots of sweet.<br>The more she ate, the more she grew<br>And behind her back she was “Fatty Glu”.</p>
@@ -596,7 +617,7 @@
     <title><![CDATA[Mr Whiny]]></title>
     <link href="http://appapappa.com/2015/01/17/mr-whiny/"/>
     <id>http://appapappa.com/2015/01/17/mr-whiny/</id>
-    <published>2015-01-17T03:00:33.000Z</published>
+    <published>2015-01-17T07:30:33.000Z</published>
     <updated>2015-05-18T03:06:02.000Z</updated>
     <content type="html"><![CDATA[<p>Written by Arun, and illustrated by Nika: <a href="mr_whiny.pdf">Mr Whiny</a></p>
 <h2 id="Mr_Whiny">Mr Whiny</h2><p>Mr. Whiny in your bed,<br>Mr. Whiny in your head.<br>Mr. Whiny says “No, no!”,<br>Mr. Whiny says “Don’t go!”.<br>“Dont go and see the sun that’s shining<br>Just stay in bed and keep on whining.”</p>
@@ -617,7 +638,7 @@
     <title><![CDATA[12 languages in 12 months:]]></title>
     <link href="http://appapappa.com/2015/01/02/archive/12-languages-in-12-months/"/>
     <id>http://appapappa.com/2015/01/02/archive/12-languages-in-12-months/</id>
-    <published>2015-01-01T22:02:31.000Z</published>
+    <published>2015-01-02T02:32:31.000Z</published>
     <updated>2015-05-17T14:44:29.000Z</updated>
     <content type="html"><![CDATA[<p>There is a flood of new programming languages, with many new and interesting emerging languages in the last year.</p>
 <p>After looking at a long list of these programming languages, here’s my short-list of 12 languages to learn in the next 12 months:</p>
@@ -668,7 +689,7 @@
     <title><![CDATA[Be a technologist!]]></title>
     <link href="http://appapappa.com/2014/10/15/archive/be-a-technologist/"/>
     <id>http://appapappa.com/2014/10/15/archive/be-a-technologist/</id>
-    <published>2014-10-15T16:25:57.000Z</published>
+    <published>2014-10-15T19:55:57.000Z</published>
     <updated>2015-05-17T14:50:01.000Z</updated>
     <content type="html"><![CDATA[<p>There is this simple 2x2 model I have. On one axis is Talk - Do. The other axis is Optimist - Pessimist. The 4 quadrants are Talk/Pessimist (activists), Talk/Optimist (politicians), Do/Pessimist (anarchists) and Do/Optimist (technologists). On any topic that draws debate - climate change, poverty, fundamentalism etc. - you have a choice to make. The right choice is to choose to be a technologist :)</p>
 ]]></content>
@@ -684,7 +705,7 @@
     <title><![CDATA[How to use Cordova network plugin in AngularJS]]></title>
     <link href="http://appapappa.com/2014/09/17/archive/how-to-use-cordova-network-plugin-in-angularjs/"/>
     <id>http://appapappa.com/2014/09/17/archive/how-to-use-cordova-network-plugin-in-angularjs/</id>
-    <published>2014-09-17T10:15:33.000Z</published>
+    <published>2014-09-17T13:45:33.000Z</published>
     <updated>2015-05-17T17:35:07.000Z</updated>
     <content type="html"><![CDATA[<script src="//gist.github.com/90a94883a7218c55065a.js"></script>
 ]]></content>
@@ -701,7 +722,7 @@
     <title><![CDATA[AngularJS / modules]]></title>
     <link href="http://appapappa.com/2014/09/17/archive/angularjs-modules/"/>
     <id>http://appapappa.com/2014/09/17/archive/angularjs-modules/</id>
-    <published>2014-09-17T05:29:59.000Z</published>
+    <published>2014-09-17T08:59:59.000Z</published>
     <updated>2015-05-17T14:46:05.000Z</updated>
     <content type="html"><![CDATA[<p>[gist id=’d580a15166a7275cea68’ width=”100%”]</p>
 ]]></content>
@@ -711,22 +732,6 @@
     </summary>
     
       <category term="Programming" scheme="http://appapappa.com/categories/Programming/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Writing (once) more]]></title>
-    <link href="http://appapappa.com/2014/07/23/archive/writing-once-more/"/>
-    <id>http://appapappa.com/2014/07/23/archive/writing-once-more/</id>
-    <published>2014-07-23T16:10:56.000Z</published>
-    <updated>2015-05-17T15:01:04.000Z</updated>
-    <content type="html"><![CDATA[<p>I’m starting to write once more after a hiatus - and I want to write more! I’ve been writing a journal off and on using Day One (which I highly recommend if you use a Mac). However, I plan to get back to blogging on my domain too - motivated by the hosting expiry reminder! Well, here’s to being back!</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>I’m starting to write once more after a hiatus - and I want to write more! I’ve been writing a journal off and on using Day One (which I ]]>
-    </summary>
-    
-      <category term="Journal" scheme="http://appapappa.com/categories/Journal/"/>
     
   </entry>
   
